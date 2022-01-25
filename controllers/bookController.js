@@ -30,11 +30,10 @@ module.exports.index = (req, res) => {
 
 exports.book_list = function(req, res, next) {
     Book.find({}, 'title author')
-        .populate('author') // ?指定作者author字段 — 这将用完整的作者信息，替换存储的书本作者 id。
+        .populate('author')
         .exec(function (err, list_books) {
             if (err) { return next(err); }
             //Successful, so render
             res.render('book_list', { title: 'Book List', book_list: list_books });
         });
-
 };
