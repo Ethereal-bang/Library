@@ -62,6 +62,6 @@ router.get('/bookinstances', book_instance_controller.bookinstance_list);
 
 router.get('/authors', author_controller.author_list);
 
-router.get('/genres', genre_controller.);
+router.get('/genres', genre_controller.genre_list);
 
 module.exports = router;
